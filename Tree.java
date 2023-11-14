@@ -1,12 +1,12 @@
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class Tree {
     Node root;
     static int ind = -1;
 
+    // custom insert method
     public void insert(Scanner scanner){
         System.out.print("Enter the value of root Node : ");
         int value = scanner.nextInt();
@@ -33,6 +33,8 @@ public class Tree {
             insert(scanner,node.right);
         }
     }
+
+    // method for pre-order traversal
     public void displayPreOrder(){
         if(root == null){
             return;
@@ -48,6 +50,7 @@ public class Tree {
         displayPreOrder(node.right);
     }
 
+    // method for post-order traversal
     public void displayPostOrder(){
         if(root == null){
             return;
@@ -63,6 +66,7 @@ public class Tree {
         System.out.print(node.data+" ");
     }
 
+    // method for In-order traversal
     public void displayInOrder(){
         if(root == null){
             return;
@@ -78,6 +82,7 @@ public class Tree {
         displayInOrder(node.right);
     }
 
+    // method for Level traversal
     public void displayLevelTraversal(){
         if(root == null){
             return;
@@ -107,6 +112,8 @@ public class Tree {
             }
         }
     }
+
+    // insert nodes by using array
     public Node getRootNode(int [] nodes){
         ind++;
         if(nodes[ind] == -1){
