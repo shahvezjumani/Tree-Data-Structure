@@ -4,7 +4,10 @@ import java.util.Scanner;
 
 public class Tree {
     Node root;
-    static int ind = -1;
+    static int ind ;
+    public Tree(){
+        ind = -1;
+    }
 
     // custom insert method
     public void insert(Scanner scanner){
