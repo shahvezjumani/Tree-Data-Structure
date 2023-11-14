@@ -5,6 +5,7 @@ import java.util.Stack;
 
 public class Tree {
     Node root;
+    static int ind = -1;
 
     public void insert(Scanner scanner){
         System.out.print("Enter the value of root Node : ");
@@ -66,15 +67,15 @@ public class Tree {
         if(root == null){
             return;
         }
-        displayPreOrder(root);
+        displayInOrder(root);
     }
     public void displayInOrder(Node node){
         if(node == null){
             return;
         }
-        displayPreOrder(node.left);
+        displayInOrder(node.left);
         System.out.print(node.data+" ");
-        displayPreOrder(node.right);
+        displayInOrder(node.right);
     }
 
     public void displayLevelTraversal(){
@@ -105,5 +106,16 @@ public class Tree {
                 }
             }
         }
+    }
+    public Node getRootNode(int [] nodes){
+        ind++;
+        if(nodes[ind] == -1){
+            return null;
+        }
+        Node node = new Node(nodes[ind]);
+        node.left = getRootNode(nodes);
+        node.right = getRootNode(nodes);
+
+        return node;
     }
 }
