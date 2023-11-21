@@ -1,6 +1,6 @@
 public class MainClass {
     public static void main(String[] args) {
-        SearchTree tree = new SearchTree();
+        Tree2 tree = new Tree2();
 //        int [] nodes = {15,6,8,-1,-1,-1,4,-1,-1};
 //        tree.root = tree.getRootNode(nodes);
 //        tree.displayPreOrder(tree.root);
@@ -16,8 +16,12 @@ public class MainClass {
         tree.insert(14);
         tree.insert(16);
         tree.insert(100);
-        tree.displayLevelTraversal();
         System.out.println();
-        tree.displayInOrder();
+        tree.inOrderTraversal();
+        System.out.println(tree.search(1000));
+        tree.deleteNode(14);
+        System.out.println();
+        tree.inOrderTraversal();
+
     }
 }
